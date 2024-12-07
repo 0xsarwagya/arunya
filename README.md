@@ -26,8 +26,11 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
+<div>
+  <h3 align="center">
+      Table of Contents 
+  </h3>
+  <hr />
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -48,8 +51,8 @@
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+  </div>
+</div>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project

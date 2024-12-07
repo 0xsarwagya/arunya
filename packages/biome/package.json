@@ -1,0 +1,12 @@
+{
+  "name": "@arunya/biome",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": "./biome.base.json",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "globals": "^15.12.0",
+    "typescript": "^5.3.3"
+  }
+}

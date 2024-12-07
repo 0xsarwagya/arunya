@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id             String   @id @default(uuid())
+  eventType      String
+  sessionId      String
+  timestamp      DateTime
+  deviceType     String
+  url            String? // Optional for page_view events
+  referrer       String? // Optional for page_view events
+  tagName        String? // Optional for click events
+  idAttribute    String? // Optional for click events
+  className      String? // Optional for click events
+  text           String? // Optional for click events
+  xCoordinate    Int? // Optional for click events
+  yCoordinate    Int? // Optional for click events
+  scrollTop      Int? // Optional for scroll events
+  scrollLeft     Int? // Optional for scroll events
+  viewportHeight Int? // Optional for scroll events
+  viewportWidth  Int? // Optional for scroll events
+}

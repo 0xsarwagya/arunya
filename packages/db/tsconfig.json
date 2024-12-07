@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"lib": ["dom", "ES2015"],
+		"outDir": "dist/"
+	},
+	"extends": "@arunya/tsconfig/base.json",
+	"include": ["."],
+	"exclude": ["dist", "build", "node_modules"]
+}

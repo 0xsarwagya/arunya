@@ -1,0 +1,36 @@
+{
+	"name": "web",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "npm run dev:tracker & next dev",
+		"build": "next build && npm run build:tracker",
+		"start": "next start",
+		"lint": "biome check . --write",
+		"lint:check": "biome check .",
+		"build:tracker": "rollup -c",
+		"dev:tracker": "rollup -c -w"
+	},
+	"dependencies": {
+		"next": "14.2.18",
+		"react": "^18",
+		"react-dom": "^18",
+		"@arunya/ui": "*",
+		"@arunya/db": "*"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@rollup/plugin-replace": "^6.0.1",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"postcss": "^8",
+		"rollup": "^2.79.2",
+		"rollup-plugin-watch": "^1.0.4",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5.7.2",
+		"zod": "3.23.8",
+		"@arunya/biome": "*",
+		"@arunya/tsconfig": "*"
+	}
+}

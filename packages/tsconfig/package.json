@@ -1,0 +1,13 @@
+{
+  "name": "@arunya/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@arunya/biome": "0.0.0"
+  }
+}
