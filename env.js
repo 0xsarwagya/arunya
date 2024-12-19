@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 const server = z.object({
+	DATABASE_URL: z.string(),
 	NODE_ENV: z
 		.enum([
 			"development", // default
@@ -16,6 +17,7 @@ const client = z.object({
 });
 
 const processEnv = {
+	DATABASE_URL: process.env.DATABASE_URL,
 	NODE_ENV: process.env.NODE_ENV,
 	BASE_URL: process.env.BASE_URL,
 	VERCEL_URL: process.env.VERCEL_URL,
