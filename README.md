@@ -16,7 +16,7 @@
         <a href="https://arunya.0xsarwagya.codes"><strong>Learn more »</strong></a>
         <br />
         <br />
-        <a href="https://discord.gg/3MTuHe3xuu">Discord</a>
+        <a href="https://discord.gg/KWbhFb6Duf">Discord</a>
         ·
         <a href="https://arunya.0xsarwagya.codes">Website</a>
         ·
