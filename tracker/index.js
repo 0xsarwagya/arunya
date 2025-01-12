@@ -180,8 +180,9 @@ class AnalyticsTracker {
             `*[${CONFIG.ATTRIBUTES.EVENT}]` // Add elements with custom events
         ].join(',');
 
-        const elements = Array.from(root.querySelectorAll < HTMLElement > (CLICKABLE_SELECTORS));
+        const elements = Array.from(root.querySelectorAll(CLICKABLE_SELECTORS));
         elements.map((element, i) => {
+            console.log(element);
             if (!element.hasAttribute(CONFIG.ATTRIBUTES.ID)) {
                 this.setupEventListeners(element, i);
             }
@@ -327,7 +328,7 @@ const initializeTracker = (scriptElement) => {
         return;
     }
 
-    const apiHost = new URL(import.meta.url).origin;
+    const apiHost = new URL(scriptElement.getAttribute('src')).origin;
     const sessionTimeout = scriptElement.getAttribute('data-arunya-session-timeout');
 
     const tracker = new AnalyticsTracker({

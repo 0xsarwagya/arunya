@@ -32,7 +32,7 @@ export default defineConfig({
       charset: 'ascii', // Output charset (ASCII)
       legalComments: 'none', // Remove all comments
       ignoreAnnotations: true, // Ignore annotations
-      platform: 'browser' // Target platform (browser)
+      platform: 'browser', // Target platform (browser)
     }),
   ],
 })
