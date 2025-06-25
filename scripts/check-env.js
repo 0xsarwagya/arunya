@@ -12,8 +12,6 @@
  * 
  * Required environment variables:
  * - DATABASE_URL: Connection string for the database
- * - BETTER_AUTH_SECRET: Secret key for authentication (min 32 chars)
- * - BETTER_AUTH_URL: URL for authentication service
  * - ADMIN_EMAIL: Email address for admin account
  * - ADMIN_PASSWORD: Password for admin account (min 8 chars)
  * 
@@ -26,8 +24,6 @@
  * ```env
  * # Required Variables
  * DATABASE_URL=postgresql://user:password@localhost:5432/dbname
- * BETTER_AUTH_SECRET=your-secret-key-min-32-characters-long
- * BETTER_AUTH_URL=https://auth.example.com
  * ADMIN_EMAIL=admin@example.com
  * ADMIN_PASSWORD=secure-password
  * 

@@ -42,13 +42,9 @@ You could help continuing its development by:
 - [Suggest new features and report issues](https://github.com/0xsarwagya/arunya/issues)
 
 ## Security
-If you discover a security vulnerability within Better Auth, please send an e-mail to **[contact@0xsarwagya.codes](mailto:contact@0xsarwagya.codes)**.
+If you discover a security vulnerability within Arunya, please send an e-mail to **[contact@0xsarwagya.codes](mailto:contact@0xsarwagya.codes)**.
 
 All reports will be promptly addressed, and you'll be credited accordingly.
-
-## Tech Stack
-
-The Arunya project is powered by an advanced stack of tools and technologies, ensuring optimal performance, maintainability, and developer experience:
 
 ## Tech Stack
 
@@ -118,7 +114,7 @@ Clone the project to your local machine using Git:
 ```bash
 git clone https://github.com/0xsarwagya/arunya.git
 cd arunya
-```
+````
 
 ### 2. Set Up PostgreSQL Database
 
@@ -209,13 +205,13 @@ This will build both the **Next.js** application and the **Rolldown** tracker.
 
 ### Additional Information
 
-- **Linting**: You can lint the project using:
+* **Linting**: You can lint the project using:
 
 ```bash
 npm run lint
 ```
 
-- **Commit Hooks**: This project uses **Husky** for Git hooks to ensure proper code formatting and commit messages.
+* **Commit Hooks**: This project uses **Husky** for Git hooks to ensure proper code formatting and commit messages.
 
 ---
 
@@ -223,8 +219,8 @@ npm run lint
 
 If you run into issues, check that:
 
-- Your PostgreSQL database is running and accessible.
-- You have properly set the environment variables in the `.env` file.
-- You can access the base URL (`http://localhost:3000`) in your browser.
+* Your PostgreSQL database is running and accessible.
+* You have properly set the environment variables in the `.env` file.
+* You can access the base URL (`http://localhost:3000`) in your browser.
 
 For any other issues or to report bugs, visit the [Issues](https://github.com/0xsarwagya/arunya/issues) section.

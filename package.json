@@ -13,7 +13,6 @@
     "lint:check": "biome lint .",
     "prepare": "husky",
     "cz": "cz",
-    "test:e2e": "node scripts/setup-e2e.js",
     "check:env": "node scripts/check-env.js",
     "postinstall": "prisma generate && prisma migrate deploy && prisma db seed",
     "dev": "npm-run-all -p dev:app dev:tracker",
@@ -23,9 +22,6 @@
     "seed": "node scripts/seed.js"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.4",
     "@prisma/client": "^6.2.1",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.1.3",
@@ -39,6 +35,7 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-switch": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.7",
+    "@types/jsonwebtoken": "^9.0.10",
     "@uidotdev/usehooks": "^2.4.1",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -48,7 +45,12 @@
     "dotenv-cli": "^8.0.0",
     "iso-3166-2": "^1.0.0",
     "jose": "^5.9.6",
+    "jsonwebtoken": "^9.0.2",
     "maxmind": "^4.3.23",
+    "next": "15.3.4",
+    "prisma": "^6.10.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "rolldown": "^1.0.0-beta.1",
     "sonner": "^1.7.1",
     "swr": "^2.3.0",
@@ -58,28 +60,34 @@
     "zod-prisma-types": "^3.2.1"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "@biomejs/biome": "1.9.4",
     "@piotr-cz/swr-idb-cache": "^1.1.2",
     "@playwright/test": "^1.49.1",
+    "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.16",
     "@testcontainers/postgresql": "^10.17.1",
     "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/iso-3166-2": "^1.0.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^16.4.7",
     "husky": "9.1.7",
     "lucide-react": "^0.471.2",
     "npm-run-all": "^4.1.5",
+    "pg": "^8.16.2",
     "postcss": "^8.5.0",
     "rollup-plugin-esbuild": "^6.1.1",
+    "tailwindcss": "^4",
     "tar": "^7.4.3",
+    "typescript": "^5",
     "zod": "3.24.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

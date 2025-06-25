@@ -42,3 +42,5 @@ next-env.d.ts
 
 # arunya
 public/script.js
+
+/lib/generated/prisma
