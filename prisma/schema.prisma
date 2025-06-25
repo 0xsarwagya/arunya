@@ -16,12 +16,90 @@ enum Role {
 }
 
 model User {
-  id       String @id @default(cuid())
-  name     String @default("User")
-  email    String @unique
-  password String
-  role     Role   @default(READ)
+  id             String       @id @default(cuid())
+  name           String       @default("User")
+  email          String       @unique
+  password       String
+  role           Role         @default(READ)
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Organization {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  users     User[]
+  websites  Website[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Website {
+  id             String       @id @default(cuid())
+  name           String       @unique
+  domain         String       @unique
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  sessions       Session[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@index([name])
+  @@index([domain])
+}
+
+model Session {
+  id        String           @id
+  websiteId String
+  website   Website          @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+  events    AnalyticsEvent[]
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  @@index([websiteId])
+}
+
+enum EventType {
+  page_view
+  click
+  custom_event
+}
+
+model AnalyticsEvent {
+  id               String    @id
+  type             EventType
+  timestamp        DateTime
+  date             DateTime
+  host             String
+  path             String
+  query            String?
+  width            Int
+  height           Int
+  timezone         String
+  previousSessions String[]
+  country          String
+  region           String
+  city             String
+  title            String?
+  target           String?
+  customEventName  String?
+  customData       Json?
+  sessionId        String
+  session          Session   @relation(fields: [sessionId], references: [id])
+  websiteId        String
+
+  @@index([sessionId])
+  @@index([timestamp])
+  @@index([type])
+  @@index([host])
+  @@index([path])
+  @@index([country])
+  @@index([region])
+  @@index([city])
+  @@index([sessionId, timestamp])
+  @@index([type, timestamp])
+  @@index([websiteId])
+  @@index([date])
 }
