@@ -11,7 +11,7 @@
     </h2>
     <!-- Project header -->
     <p align="center">
-        The most comprehensive authentication and analytics platform for the web
+        The most comprehensive analytics platform for the web
         <br />
         <a href="https://arunya.0xsarwagya.codes"><strong>Learn more »</strong></a>
         <br />
